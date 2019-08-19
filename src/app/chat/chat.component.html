@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="messaging" >
+    <div class="inbox_msg">
+     
+      <div class="mesgs">
+        <div class="msg_history" id="msgs">
+          <div class="incoming_msg" *ngFor="let datos of chatList" style="    margin-top: 30px;    margin-left: 10px;">
+            <div   class="c-message_list__day_divider"><hr   class="c-message_list__day_divider__line"></div>
+            <div class="incoming_msg_img"> <img src="{{datos.imagen}}" alt="sunil">
+            </div>
+            <div class="received_msg">
+                <h6>{{datos.idNombre}}</h6>
+              <div class="received_withd_msg">
+                <p>{{datos.mensaje}}</p>
+                <span class="time_date"> {{datos.fecha}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="type_msg">
+          <div class="input_msg_write">
+            <input [(ngModel)]="newMesg"    type="text" class="write_msg" placeholder="Type a message" />
+            <button (click)="enviarPost()" class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
